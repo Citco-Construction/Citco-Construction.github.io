@@ -116,11 +116,10 @@
   .btn-text:hover{border-color:var(--accent);}
 
   .hero-photo{
-    height:420px;background:linear-gradient(135deg,#efe6d6,#dfd3ba);
+    height:420px;background:var(--bg-2);
     border:1px solid var(--line);position:relative;overflow:hidden;
   }
-  .hero-photo .sky{position:absolute;inset:0;}
-  .hero-photo svg{width:100%;height:100%;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 
   .hero-stats{
     display:grid;grid-template-columns:repeat(4,1fr);
@@ -183,9 +182,9 @@
   /* ---------- PROJECTS ---------- */
   .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .proj{border:1px solid var(--line);background:var(--bg);}
-  .proj .ph{aspect-ratio:4/3;position:relative;overflow:hidden;}
-  .proj .ph .bg{position:absolute;inset:0;transition:transform .5s ease;}
-  .proj:hover .ph .bg{transform:scale(1.04);}
+  .proj .ph{aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--bg-2);}
+  .proj .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .proj:hover .ph img{transform:scale(1.04);}
   .proj .info{padding:18px 20px 22px;}
   .proj .tag{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dim);display:block;margin-bottom:6px;}
   .proj h4{font-size:18px;color:var(--ink);font-weight:600;font-family:'Fraunces',serif;}
@@ -294,29 +293,7 @@
     </div>
     <div class="wrap" style="padding-bottom:0;">
       <div class="hero-photo">
-        <div class="sky">
-          <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-            <g fill="#cabb98" opacity=".8">
-              <rect x="0" y="240" width="70" height="180"/>
-              <rect x="80" y="180" width="55" height="240"/>
-              <rect x="145" y="260" width="45" height="160"/>
-              <rect x="200" y="120" width="80" height="300"/>
-              <rect x="290" y="210" width="50" height="210"/>
-              <rect x="350" y="90" width="60" height="330"/>
-              <rect x="420" y="250" width="65" height="170"/>
-              <rect x="495" y="190" width="45" height="230"/>
-              <rect x="550" y="230" width="75" height="190"/>
-              <rect x="635" y="150" width="55" height="270"/>
-              <rect x="700" y="220" width="50" height="200"/>
-              <rect x="760" y="70" width="65" height="350"/>
-              <rect x="835" y="240" width="55" height="180"/>
-              <rect x="900" y="180" width="45" height="240"/>
-              <rect x="955" y="230" width="70" height="190"/>
-              <rect x="1035" y="140" width="55" height="280"/>
-              <rect x="1100" y="250" width="50" height="170"/>
-            </g>
-          </svg>
-        </div>
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=70" alt="Citco Construction crew reviewing an active commercial job site in Miami" loading="eager">
       </div>
     </div>
     <div class="wrap">
@@ -417,27 +394,27 @@
       </div>
       <div class="projects-grid reveal">
         <div class="proj">
-          <div class="ph"><div class="bg" style="background:linear-gradient(135deg,#e9dfc9,#d3c39e);"></div></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=65" alt="Corporate office buildout with conference table and glass walls" loading="lazy"></div>
           <div class="info"><span class="tag">Commercial · Coral Gables</span><h4>Corporate Office Buildout</h4></div>
         </div>
         <div class="proj">
-          <div class="ph"><div class="bg" style="background:linear-gradient(135deg,#e2e0d0,#c7c4a8);"></div></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=65" alt="Boutique restaurant interior fit-out with dining seating" loading="lazy"></div>
           <div class="info"><span class="tag">Hospitality · Miami</span><h4>Boutique Restaurant Fit-Out</h4></div>
         </div>
         <div class="proj">
-          <div class="ph"><div class="bg" style="background:linear-gradient(135deg,#e8dcd6,#cdb8ae);"></div></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=65" alt="Renovated apartment lobby and amenity lounge space" loading="lazy"></div>
           <div class="info"><span class="tag">Multifamily · Brickell</span><h4>Lobby &amp; Amenity Renovation</h4></div>
         </div>
         <div class="proj">
-          <div class="ph"><div class="bg" style="background:linear-gradient(135deg,#dfe2e2,#bfc6c6);"></div></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=65" alt="Renovated retail storefront interior with display shelving" loading="lazy"></div>
           <div class="info"><span class="tag">Retail · Coconut Grove</span><h4>Flagship Storefront Renovation</h4></div>
         </div>
         <div class="proj">
-          <div class="ph"><div class="bg" style="background:linear-gradient(135deg,#ede2cd,#d9c49b);"></div></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=65" alt="Custom home renovation living room with modern finishes" loading="lazy"></div>
           <div class="info"><span class="tag">Residential · Coral Gables</span><h4>Custom Home Renovation</h4></div>
         </div>
         <div class="proj">
-          <div class="ph"><div class="bg" style="background:linear-gradient(135deg,#dee3e0,#bcc8c1);"></div></div>
+          <div class="ph"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=65" alt="Class A commercial office tower exterior" loading="lazy"></div>
           <div class="info"><span class="tag">Commercial · Doral</span><h4>Class A Tenant Improvement</h4></div>
         </div>
       </div>
