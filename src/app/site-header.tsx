@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { delocalizePath, localizePath, nav, otherLocale, ui, type Locale } from "@/lib/i18n";
+import { delocalizePath, type Locale, localizePath, nav, otherLocale, ui } from "@/lib/i18n";
 import { siteConfig, sitePages } from "@/lib/site";
 
 export function SiteHeader({ locale }: { locale: Locale }) {
@@ -18,8 +18,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
     <header>
       <nav className="wrap">
         <Link href={localizePath("/", locale)} className="brand">
-          <span className="mark">C</span>
-          {siteConfig.name}
+          <img src="/logo_header.png" alt={siteConfig.name} className="brand-logo" />
         </Link>
         <div className={`navlinks${open ? " open" : ""}`} id="navLinks">
           {primaryPages.map((page) => (

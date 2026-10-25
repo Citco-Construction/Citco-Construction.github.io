@@ -28,7 +28,7 @@ export const siteConfig = {
 
 export type SitePage = {
   path: string;
-  labelKey: "home" | "services" | "projects" | "about" | "contact";
+  labelKey: "home" | "services" | "projects" | "about" | "contact" | "privacy";
 };
 
 export const sitePages: SitePage[] = [
@@ -39,10 +39,20 @@ export const sitePages: SitePage[] = [
   { path: "/contact", labelKey: "contact" },
 ];
 
-// TODO: no real social handles were provided — swap these placeholder hrefs
-// for the company's actual Instagram / LinkedIn / GitHub links.
-export const socialLinks: { name: "Instagram" | "LinkedIn" | "GitHub"; url: string }[] = [
-  { name: "Instagram", url: "#" },
-  { name: "LinkedIn", url: "#" },
-  { name: "GitHub", url: "#" },
+// Legal pages: kept out of sitePages so they don't appear in the primary header nav,
+// but still need sitemap coverage and a footer link.
+export const legalPages: SitePage[] = [{ path: "/privacy", labelKey: "privacy" }];
+
+// No company-specific Instagram/LinkedIn handles were provided yet, so those two
+// link to the platform root rather than a real profile — isProfile stays false for
+// them so generateOrganizationSchema doesn't cite a generic homepage as "sameAs" this
+// business. GitHub links to the org's actual account, so it's a real profile link.
+export const socialLinks: {
+  name: "Instagram" | "LinkedIn" | "GitHub";
+  url: string;
+  isProfile: boolean;
+}[] = [
+  { name: "Instagram", url: "https://instagram.com", isProfile: false },
+  { name: "LinkedIn", url: "https://linkedin.com", isProfile: false },
+  { name: "GitHub", url: "https://github.com/Citco-Construction", isProfile: true },
 ];

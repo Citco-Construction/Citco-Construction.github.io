@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Nosotros",
-  description: "Citco Construction, Inc. — un contratista general familiar en Coral Gables, FL desde 1982.",
+  description:
+    "Citco Construction, Inc. — un contratista general familiar en Coral Gables, FL desde 1982.",
   path: "/about",
   locale: "es",
 });
@@ -12,6 +14,13 @@ export const metadata: Metadata = pageMetadata({
 export default function AboutPageEs() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint: JSON-LD injection is the standard pattern for structured data
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageBreadcrumbSchema("about", "/about", "es")),
+        }}
+      />
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Empresa Familiar Desde 1982</span>
@@ -25,19 +34,19 @@ export default function AboutPageEs() {
           <div className="about-copy">
             <p>
               <strong>Citco Construction, Inc.</strong> es una empresa de contratación general
-              familiar con raíces en Coral Gables, fundada en {siteConfig.foundingYear}. La
-              empresa opera bajo la licencia de <strong>{siteConfig.license.holder}</strong>,
-              un {siteConfig.license.type} activo en el estado de Florida.
+              familiar con raíces en Coral Gables, fundada en {siteConfig.foundingYear}. La empresa
+              opera bajo la licencia de <strong>{siteConfig.license.holder}</strong>, un{" "}
+              {siteConfig.license.type} activo en el estado de Florida.
             </p>
             <p>
               Después de cuatro décadas, el enfoque no ha cambiado: dar a cada cliente atención
-              cercana, exigir a cada socio de oficio un estándar alto y nunca dejar que un
-              proyecto se salga de su plan.
+              cercana, exigir a cada socio de oficio un estándar alto y nunca dejar que un proyecto
+              se salga de su plan.
             </p>
             <p>
-              Hoy Citco se enfoca en <strong>ampliaciones residenciales, renovaciones mayores,
-              cocinas y baños</strong> en todo Miami-Dade — trabajo en las casas donde la gente
-              realmente vive.
+              Hoy Citco se enfoca en{" "}
+              <strong>ampliaciones residenciales, renovaciones mayores, cocinas y baños</strong> en
+              todo Miami-Dade — trabajo en las casas donde la gente realmente vive.
             </p>
             <p>
               Dirección: <strong>{siteConfig.officers[0].name}</strong> (Presidente) y{" "}

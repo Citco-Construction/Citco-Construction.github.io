@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { pageBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Services",
@@ -12,14 +13,21 @@ export const metadata: Metadata = pageMetadata({
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint: JSON-LD injection is the standard pattern for structured data
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageBreadcrumbSchema("services", "/services", "en")),
+        }}
+      />
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow">What We Build</span>
           <h1>Services</h1>
           <p>
-            Citco Construction focuses on residential work: additions, major renovations, and
-            full kitchen and bathroom remodels — each run with the same disciplined process from
-            first consult to final walkthrough.
+            Citco Construction focuses on residential work: additions, major renovations, and full
+            kitchen and bathroom remodels — each run with the same disciplined process from first
+            consult to final walkthrough.
           </p>
         </div>
       </section>

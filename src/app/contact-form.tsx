@@ -23,7 +23,13 @@ const copy = {
     email: "Correo Electrónico",
     emailPh: "jane@email.com",
     type: "Tipo de Proyecto",
-    types: ["Ampliación", "Renovación Mayor", "Remodelación de Cocina", "Remodelación de Baño", "Otro"],
+    types: [
+      "Ampliación",
+      "Renovación Mayor",
+      "Remodelación de Cocina",
+      "Remodelación de Baño",
+      "Otro",
+    ],
     details: "Detalles del Proyecto",
     detailsPh: "Cuéntenos sobre el alcance, el cronograma y la ubicación.",
     submit: "Enviar Consulta",
@@ -67,7 +73,11 @@ export function ContactForm({ locale }: { locale: Locale }) {
       <button className="btn" type="submit">
         {t.submit}
       </button>
-      {submitted && <p className="form-note" style={{ color: "var(--accent-dim)" }}>{t.success}</p>}
+      {submitted && (
+        <p className="form-note" style={{ color: "var(--accent-dim)" }}>
+          {t.success}
+        </p>
+      )}
     </form>
   );
 }

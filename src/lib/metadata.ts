@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { localizePath, type Locale } from "./i18n";
+import { type Locale, localizePath } from "./i18n";
 import { siteConfig } from "./site";
 
 export function pageMetadata({

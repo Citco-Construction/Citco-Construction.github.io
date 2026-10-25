@@ -18,7 +18,11 @@ const fraunces = Fraunces({
 
 export function RootLayout({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   return (
-    <html lang={locale} className={`${inter.variable} ${fraunces.variable}`}>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${fraunces.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body>
         <script
           type="application/ld+json"

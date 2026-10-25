@@ -1,0 +1,15 @@
+{
+  "name": "citco-eslint-security",
+  "private": true,
+  "description": "Security-focused ESLint run, isolated from the root package to match the sibling gmt7/aglflorida repos' CI structure.",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "eslint": "^10.13.0",
+    "eslint-plugin-no-unsanitized": "^4.1.5",
+    "eslint-plugin-security": "^4.0.1",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.71.2"
+  }
+}

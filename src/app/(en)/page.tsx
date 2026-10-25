@@ -22,14 +22,14 @@ export default function HomePage() {
               <h1>Additions and renovations, done the way they should be done.</h1>
               <p className="lede">
                 Citco Construction is a family-owned general contractor delivering residential
-                additions, major renovations, kitchens, and bathrooms across Miami-Dade —
-                careful planning, honest scheduling, and a finished product built to last.
+                additions, major renovations, kitchens, and bathrooms across Miami-Dade — careful
+                planning, honest scheduling, and a finished product built to last.
               </p>
             </div>
             <div className="hero-side">
               <p style={{ color: "var(--ink-dim)", fontSize: "15.5px" }}>
-                Family owned and operated since 1982, holding an active Florida General
-                Contractor license.
+                Family owned and operated since 1982, holding an active Florida General Contractor
+                license.
               </p>
               <div className="badge">
                 <span className="dot" />
@@ -49,8 +49,8 @@ export default function HomePage() {
         <div className="wrap" style={{ paddingBottom: 0 }}>
           <div className="hero-photo">
             <img
-              src="/images/placeholder/hero.png"
-              alt="Placeholder photo of a Citco Construction job site"
+              src="/images/hero-kitchen.jpg"
+              alt="A Citco Construction kitchen remodel with an ocean view"
               loading="eager"
             />
           </div>
@@ -83,9 +83,9 @@ export default function HomePage() {
             <span className="eyebrow">What We Build</span>
             <h2>Residential additions, renovations, kitchens, and baths.</h2>
             <p>
-              Our practice centers on residential construction — additions, major renovations,
-              and full kitchen and bathroom remodels — for homeowners who expect a disciplined
-              process behind their own home.
+              Our practice centers on residential construction — additions, major renovations, and
+              full kitchen and bathroom remodels — for homeowners who expect a disciplined process
+              behind their own home.
             </p>
           </div>
 
@@ -116,7 +116,9 @@ export default function HomePage() {
             <div className="service-card">
               <span className="tagnum">03 — Owner&rsquo;s Rep</span>
               <h3>Pre-Construction &amp; Consulting</h3>
-              <p>Budgeting, scheduling, and permitting guidance before the first wall comes down.</p>
+              <p>
+                Budgeting, scheduling, and permitting guidance before the first wall comes down.
+              </p>
               <ul>
                 <li>Feasibility &amp; Estimating</li>
                 <li>Permit Expediting</li>
@@ -137,22 +139,34 @@ export default function HomePage() {
             <div className="approach-item">
               <div className="idx">01</div>
               <h4>Consult &amp; Scope</h4>
-              <p>A direct conversation with ownership to understand the project and set realistic expectations.</p>
+              <p>
+                A direct conversation with ownership to understand the project and set realistic
+                expectations.
+              </p>
             </div>
             <div className="approach-item">
               <div className="idx">02</div>
               <h4>Plan &amp; Permit</h4>
-              <p>Detailed estimating and full permit coordination across Miami-Dade jurisdictions before a single trade mobilizes.</p>
+              <p>
+                Detailed estimating and full permit coordination across Miami-Dade jurisdictions
+                before a single trade mobilizes.
+              </p>
             </div>
             <div className="approach-item">
               <div className="idx">03</div>
               <h4>Build &amp; Report</h4>
-              <p>Disciplined scheduling, vetted trade partners, and transparent, regular progress reporting.</p>
+              <p>
+                Disciplined scheduling, vetted trade partners, and transparent, regular progress
+                reporting.
+              </p>
             </div>
             <div className="approach-item">
               <div className="idx">04</div>
               <h4>Deliver &amp; Support</h4>
-              <p>A clean final walkthrough, closeout documentation, and a team that still answers the phone after handover.</p>
+              <p>
+                A clean final walkthrough, closeout documentation, and a team that still answers the
+                phone after handover.
+              </p>
             </div>
           </div>
         </div>
@@ -171,7 +185,11 @@ export default function HomePage() {
           <div className="projects-grid">
             <div className="proj">
               <div className="ph">
-                <img src="/images/placeholder/project-4x3.png" alt="Placeholder — room addition" loading="lazy" />
+                <img
+                  src="/images/placeholder/project-4x3.png"
+                  alt="Placeholder — room addition"
+                  loading="lazy"
+                />
               </div>
               <div className="info">
                 <span className="tag">Addition · Coral Gables</span>
@@ -180,7 +198,11 @@ export default function HomePage() {
             </div>
             <div className="proj">
               <div className="ph">
-                <img src="/images/placeholder/project-4x3.png" alt="Placeholder — kitchen remodel" loading="lazy" />
+                <img
+                  src="/images/placeholder/project-4x3.png"
+                  alt="Placeholder — kitchen remodel"
+                  loading="lazy"
+                />
               </div>
               <div className="info">
                 <span className="tag">Kitchen · Coral Gables</span>
@@ -189,7 +211,11 @@ export default function HomePage() {
             </div>
             <div className="proj">
               <div className="ph">
-                <img src="/images/placeholder/project-4x3.png" alt="Placeholder — bathroom remodel" loading="lazy" />
+                <img
+                  src="/images/placeholder/project-4x3.png"
+                  alt="Placeholder — bathroom remodel"
+                  loading="lazy"
+                />
               </div>
               <div className="info">
                 <span className="tag">Bathroom · Miami</span>
@@ -201,7 +227,9 @@ export default function HomePage() {
       </section>
 
       <section className="quote-sec">
-        <blockquote>&ldquo;Citco treats every job site like it&rsquo;s their own home.&rdquo;</blockquote>
+        <blockquote>
+          &ldquo;Citco treats every job site like it&rsquo;s their own home.&rdquo;
+        </blockquote>
         <div className="who">
           Placeholder Client Quote — <b>Case Studies Added As Projects Close</b>
         </div>

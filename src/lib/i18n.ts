@@ -21,13 +21,15 @@ export function delocalizePath(pathname: string): string {
 
 type Dict = Record<Locale, string>;
 
-export const nav: Record<"home" | "services" | "projects" | "about" | "contact", Dict> = {
-  home: { en: "Home", es: "Inicio" },
-  services: { en: "Services", es: "Servicios" },
-  projects: { en: "Projects", es: "Proyectos" },
-  about: { en: "About", es: "Nosotros" },
-  contact: { en: "Contact", es: "Contacto" },
-};
+export const nav: Record<"home" | "services" | "projects" | "about" | "contact" | "privacy", Dict> =
+  {
+    home: { en: "Home", es: "Inicio" },
+    services: { en: "Services", es: "Servicios" },
+    projects: { en: "Projects", es: "Proyectos" },
+    about: { en: "About", es: "Nosotros" },
+    contact: { en: "Contact", es: "Contacto" },
+    privacy: { en: "Privacy Policy", es: "Política de Privacidad" },
+  };
 
 export const ui = {
   languageSwitchLabel: { en: "Español", es: "English" } as Dict,
@@ -38,4 +40,5 @@ export const ui = {
   } as Dict,
   viewOurWork: { en: "View Our Work", es: "Ver Nuestro Trabajo" } as Dict,
   familyOwnedSince: { en: "Family Owned Since 1982", es: "Empresa Familiar Desde 1982" } as Dict,
+  designedBy: { en: "Site designed by", es: "Sitio diseñado por" } as Dict,
 };

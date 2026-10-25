@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ui } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
@@ -23,19 +22,13 @@ export default function HomePageEs() {
               <p className="lede">
                 Citco Construction es un contratista general familiar que realiza ampliaciones
                 residenciales, renovaciones mayores, cocinas y baños en todo Miami-Dade — con
-                planificación cuidadosa, cronogramas honestos y un resultado construido para
-                durar.
+                planificación cuidadosa, cronogramas honestos y un resultado construido para durar.
               </p>
             </div>
             <div className="hero-side">
               <p style={{ color: "var(--ink-dim)", fontSize: "15.5px" }}>
-                Empresa familiar desde 1982, con licencia activa de Contratista General de
-                Florida.
+                Empresa familiar desde 1982, con licencia activa de Contratista General de Florida.
               </p>
-              <div className="badge">
-                <span className="dot" />
-                {ui.seHablaEspanol.es}
-              </div>
               <div className="hero-ctas">
                 <Link href="/contact" className="btn btn-solid">
                   Solicitar una Consulta
@@ -50,8 +43,8 @@ export default function HomePageEs() {
         <div className="wrap" style={{ paddingBottom: 0 }}>
           <div className="hero-photo">
             <img
-              src="/images/placeholder/hero.png"
-              alt="Foto de marcador de posición de un proyecto de Citco Construction"
+              src="/images/hero-kitchen.jpg"
+              alt="Remodelación de cocina de Citco Construction con vista al mar"
               loading="eager"
             />
           </div>
@@ -84,9 +77,9 @@ export default function HomePageEs() {
             <span className="eyebrow">Qué Construimos</span>
             <h2>Ampliaciones, renovaciones, cocinas y baños residenciales.</h2>
             <p>
-              Nuestra práctica se centra en la construcción residencial — ampliaciones,
-              renovaciones mayores y remodelaciones completas de cocinas y baños — para
-              propietarios que esperan el mismo rigor en su propia casa.
+              Nuestra práctica se centra en la construcción residencial — ampliaciones, renovaciones
+              mayores y remodelaciones completas de cocinas y baños — para propietarios que esperan
+              el mismo rigor en su propia casa.
             </p>
           </div>
 
@@ -95,8 +88,8 @@ export default function HomePageEs() {
               <span className="tagnum">01 — Enfoque Principal</span>
               <h3>Ampliaciones y Renovaciones Mayores</h3>
               <p>
-                Entrega integral para propietarios que amplían o renuevan por completo su
-                espacio — desde los permisos hasta la entrega final.
+                Entrega integral para propietarios que amplían o renuevan por completo su espacio —
+                desde los permisos hasta la entrega final.
               </p>
               <ul>
                 <li>Ampliaciones de Habitaciones y Segundo Piso</li>
@@ -117,7 +110,9 @@ export default function HomePageEs() {
             <div className="service-card">
               <span className="tagnum">03 — Representante del Propietario</span>
               <h3>Preconstrucción y Consultoría</h3>
-              <p>Presupuestos, cronogramas y asesoría de permisos antes de derribar la primera pared.</p>
+              <p>
+                Presupuestos, cronogramas y asesoría de permisos antes de derribar la primera pared.
+              </p>
               <ul>
                 <li>Viabilidad y Estimados</li>
                 <li>Gestión de Permisos</li>
@@ -138,22 +133,34 @@ export default function HomePageEs() {
             <div className="approach-item">
               <div className="idx">01</div>
               <h4>Consulta y Alcance</h4>
-              <p>Una conversación directa con la gerencia para entender el proyecto y fijar expectativas realistas.</p>
+              <p>
+                Una conversación directa con la gerencia para entender el proyecto y fijar
+                expectativas realistas.
+              </p>
             </div>
             <div className="approach-item">
               <div className="idx">02</div>
               <h4>Planificación y Permisos</h4>
-              <p>Estimados detallados y coordinación completa de permisos en Miami-Dade antes de movilizar un solo oficio.</p>
+              <p>
+                Estimados detallados y coordinación completa de permisos en Miami-Dade antes de
+                movilizar un solo oficio.
+              </p>
             </div>
             <div className="approach-item">
               <div className="idx">03</div>
               <h4>Construcción e Informes</h4>
-              <p>Cronogramas disciplinados, socios verificados y reportes de avance regulares y transparentes.</p>
+              <p>
+                Cronogramas disciplinados, socios verificados y reportes de avance regulares y
+                transparentes.
+              </p>
             </div>
             <div className="approach-item">
               <div className="idx">04</div>
               <h4>Entrega y Soporte</h4>
-              <p>Una entrega final impecable, documentación de cierre y un equipo que sigue respondiendo el teléfono.</p>
+              <p>
+                Una entrega final impecable, documentación de cierre y un equipo que sigue
+                respondiendo el teléfono.
+              </p>
             </div>
           </div>
         </div>
@@ -173,7 +180,11 @@ export default function HomePageEs() {
           <div className="projects-grid">
             <div className="proj">
               <div className="ph">
-                <img src="/images/placeholder/project-4x3.png" alt="Marcador de posición — ampliación de habitación" loading="lazy" />
+                <img
+                  src="/images/placeholder/project-4x3.png"
+                  alt="Marcador de posición — ampliación de habitación"
+                  loading="lazy"
+                />
               </div>
               <div className="info">
                 <span className="tag">Ampliación · Coral Gables</span>
@@ -182,7 +193,11 @@ export default function HomePageEs() {
             </div>
             <div className="proj">
               <div className="ph">
-                <img src="/images/placeholder/project-4x3.png" alt="Marcador de posición — remodelación de cocina" loading="lazy" />
+                <img
+                  src="/images/placeholder/project-4x3.png"
+                  alt="Marcador de posición — remodelación de cocina"
+                  loading="lazy"
+                />
               </div>
               <div className="info">
                 <span className="tag">Cocina · Coral Gables</span>
@@ -191,7 +206,11 @@ export default function HomePageEs() {
             </div>
             <div className="proj">
               <div className="ph">
-                <img src="/images/placeholder/project-4x3.png" alt="Marcador de posición — remodelación de baño" loading="lazy" />
+                <img
+                  src="/images/placeholder/project-4x3.png"
+                  alt="Marcador de posición — remodelación de baño"
+                  loading="lazy"
+                />
               </div>
               <div className="info">
                 <span className="tag">Baño · Miami</span>
@@ -203,7 +222,9 @@ export default function HomePageEs() {
       </section>
 
       <section className="quote-sec">
-        <blockquote>&ldquo;Citco trata cada proyecto como si fuera su propia casa.&rdquo;</blockquote>
+        <blockquote>
+          &ldquo;Citco trata cada proyecto como si fuera su propia casa.&rdquo;
+        </blockquote>
         <div className="who">
           Cita de Cliente de Muestra — <b>Casos de Estudio Agregados al Cerrar Proyectos</b>
         </div>

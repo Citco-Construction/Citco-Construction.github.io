@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
-  description: "Citco Construction, Inc. — a family-owned general contractor in Coral Gables, FL since 1982.",
+  description:
+    "Citco Construction, Inc. — a family-owned general contractor in Coral Gables, FL since 1982.",
   path: "/about",
   locale: "en",
 });
@@ -12,6 +14,13 @@ export const metadata: Metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint: JSON-LD injection is the standard pattern for structured data
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageBreadcrumbSchema("about", "/about", "en")),
+        }}
+      />
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Family Owned Since 1982</span>
@@ -24,26 +33,23 @@ export default function AboutPage() {
         <div className="wrap about-grid">
           <div className="about-copy">
             <p>
-              <strong>Citco Construction, Inc.</strong> is a family-owned general contracting
-              firm rooted in Coral Gables, founded in {siteConfig.foundingYear}. The company
-              operates under the license of{" "}
-              <strong>{siteConfig.license.holder}</strong>, a {siteConfig.license.type} active
-              in the {siteConfig.license.jurisdiction}.
+              <strong>Citco Construction, Inc.</strong> is a family-owned general contracting firm
+              rooted in Coral Gables, founded in {siteConfig.foundingYear}. The company operates
+              under the license of <strong>{siteConfig.license.holder}</strong>, a{" "}
+              {siteConfig.license.type} active in the {siteConfig.license.jurisdiction}.
             </p>
             <p>
-              Four decades in, the approach hasn&rsquo;t changed: give every client close
-              attention, hold every trade partner to a high standard, and never let a project
-              outrun its plan.
+              Four decades in, the approach hasn&rsquo;t changed: give every client close attention,
+              hold every trade partner to a high standard, and never let a project outrun its plan.
             </p>
             <p>
-              Today Citco focuses on <strong>residential additions, major renovations,
-              kitchens, and bathrooms</strong> across Miami-Dade — work on the homes people
-              actually live in.
+              Today Citco focuses on{" "}
+              <strong>residential additions, major renovations, kitchens, and bathrooms</strong>{" "}
+              across Miami-Dade — work on the homes people actually live in.
             </p>
             <p>
               Leadership: <strong>{siteConfig.officers[0].name}</strong> (
-              {siteConfig.officers[0].title}) and{" "}
-              <strong>{siteConfig.officers[1].name}</strong> (
+              {siteConfig.officers[0].title}) and <strong>{siteConfig.officers[1].name}</strong> (
               {siteConfig.officers[1].title}).
             </p>
           </div>
@@ -96,7 +102,7 @@ export default function AboutPage() {
           <div className="hero-photo" style={{ height: 360 }}>
             <img
               src="/images/placeholder/wide.png"
-              alt="Placeholder photo of the Citco Construction team"
+              alt="Placeholder of the Citco Construction team"
             />
           </div>
         </div>

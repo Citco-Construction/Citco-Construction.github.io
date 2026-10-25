@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { pageBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Projects",
-  description: "A sample of the additions, renovations, kitchens, and bathrooms Citco Construction builds.",
+  description:
+    "A sample of the additions, renovations, kitchens, and bathrooms Citco Construction builds.",
   path: "/projects",
   locale: "en",
 });
@@ -20,14 +22,21 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint: JSON-LD injection is the standard pattern for structured data
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageBreadcrumbSchema("projects", "/projects", "en")),
+        }}
+      />
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Selected Work</span>
           <h1>Projects</h1>
           <p>
             This demo site showcases the categories Citco Construction builds in. Real job
-            photography and case studies are added as they&rsquo;re brought over from the
-            company archive.
+            photography and case studies are added as they&rsquo;re brought over from the company
+            archive.
           </p>
         </div>
       </section>

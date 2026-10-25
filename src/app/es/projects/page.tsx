@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
+import { pageBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Proyectos",
-  description: "Una muestra de las ampliaciones, renovaciones, cocinas y baños que construye Citco Construction.",
+  description:
+    "Una muestra de las ampliaciones, renovaciones, cocinas y baños que construye Citco Construction.",
   path: "/projects",
   locale: "es",
 });
@@ -20,14 +22,21 @@ const projects = [
 export default function ProjectsPageEs() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint: JSON-LD injection is the standard pattern for structured data
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageBreadcrumbSchema("projects", "/projects", "es")),
+        }}
+      />
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Trabajos Seleccionados</span>
           <h1>Proyectos</h1>
           <p>
-            Este sitio de demostración muestra las categorías en las que trabaja Citco
-            Construction. Las fotos reales y los casos de estudio se incorporan a medida que se
-            trasladan desde el archivo de la empresa.
+            Este sitio de demostración muestra las categorías en las que trabaja Citco Construction.
+            Las fotos reales y los casos de estudio se incorporan a medida que se trasladan desde el
+            archivo de la empresa.
           </p>
         </div>
       </section>

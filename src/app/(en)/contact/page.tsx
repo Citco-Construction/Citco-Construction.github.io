@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ui } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
+import { pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 import { ContactForm } from "../../contact-form";
 
@@ -13,63 +14,92 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ContactPage() {
   return (
-    <section className="bg-2">
-      <div className="wrap contact-grid" style={{ paddingTop: 96 }}>
-        <div>
-          <span className="eyebrow">Get In Touch</span>
-          <h2 style={{ fontSize: "clamp(28px,3.4vw,38px)", color: "var(--ink)", margin: "16px 0 18px" }}>
-            Start a conversation with ownership.
-          </h2>
-          <p style={{ color: "var(--ink-dim)", fontSize: "15.5px", marginBottom: 6, maxWidth: 440 }}>
-            Every project starts with a direct conversation — not a call center. Tell us about
-            your addition, renovation, kitchen, or bathroom.
-          </p>
-          <p style={{ color: "var(--ink-dim)", fontSize: "15.5px", maxWidth: 440 }}>
-            {ui.seHablaEspanol.en}
-          </p>
+    <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint: JSON-LD injection is the standard pattern for structured data
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageBreadcrumbSchema("contact", "/contact", "en")),
+        }}
+      />
+      <section className="bg-2">
+        <div className="wrap contact-grid" style={{ paddingTop: 96 }}>
+          <div>
+            <span className="eyebrow">Get In Touch</span>
+            <h1
+              style={{
+                fontSize: "clamp(28px,3.4vw,38px)",
+                color: "var(--ink)",
+                margin: "16px 0 18px",
+              }}
+            >
+              Start a conversation with ownership.
+            </h1>
+            <p
+              style={{
+                color: "var(--ink-dim)",
+                fontSize: "15.5px",
+                marginBottom: 6,
+                maxWidth: 440,
+              }}
+            >
+              Every project starts with a direct conversation — not a call center. Tell us about
+              your addition, renovation, kitchen, or bathroom.
+            </p>
+            <p style={{ color: "var(--ink-dim)", fontSize: "15.5px", maxWidth: 440 }}>
+              {ui.seHablaEspanol.en}
+            </p>
 
-          <div style={{ marginTop: 8 }}>
-            <div className="info-row">
-              <div className="ico">◈</div>
-              <div>
-                <h5>Office</h5>
-                <p>
-                  {siteConfig.address.street}
-                  <br />
-                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
-                </p>
+            <div style={{ marginTop: 8 }}>
+              <div className="info-row">
+                <div className="ico">◈</div>
+                <div>
+                  <h5>Office</h5>
+                  <p>
+                    {siteConfig.address.street}
+                    <br />
+                    {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="info-row">
-              <div className="ico">☏</div>
-              <div>
-                <h5>Phone</h5>
-                <p>Office {siteConfig.phoneOffice}</p>
-                <p>Mobile {siteConfig.phoneMobile}</p>
+              <div className="info-row">
+                <div className="ico">☏</div>
+                <div>
+                  <h5>Phone</h5>
+                  <p>Office {siteConfig.phoneOffice}</p>
+                  <p>Mobile {siteConfig.phoneMobile}</p>
+                </div>
               </div>
-            </div>
-            <div className="info-row">
-              <div className="ico">✉</div>
-              <div>
-                <h5>Email</h5>
-                <p>{siteConfig.email}</p>
+              <div className="info-row">
+                <div className="ico">✉</div>
+                <div>
+                  <h5>Email</h5>
+                  <p>{siteConfig.email}</p>
+                </div>
               </div>
-            </div>
-            <div className="info-row">
-              <div className="ico">§</div>
-              <div>
-                <h5>License</h5>
-                <p>
-                  {siteConfig.license.jurisdiction} {siteConfig.license.number} ·{" "}
-                  {siteConfig.license.type}
-                </p>
+              <div className="info-row">
+                <div className="ico">◷</div>
+                <div>
+                  <h5>Hours</h5>
+                  <p>Monday–Friday, 9am–5pm</p>
+                </div>
+              </div>
+              <div className="info-row">
+                <div className="ico">§</div>
+                <div>
+                  <h5>License</h5>
+                  <p>
+                    {siteConfig.license.jurisdiction} {siteConfig.license.number} ·{" "}
+                    {siteConfig.license.type}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <ContactForm locale="en" />
-      </div>
-    </section>
+          <ContactForm locale="en" />
+        </div>
+      </section>
+    </>
   );
 }

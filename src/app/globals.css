@@ -1,15 +1,17 @@
 :root {
-  --bg: #ffffff;
-  --bg-2: #f7f5f1;
+  --bg: #fcfbf8;
+  --bg-2: #f2f4ef;
   --panel: #ffffff;
-  --line: #e7e3da;
-  --line-strong: #d6d0c2;
-  --accent: #a85c2e;
-  --accent-dim: #8a6a24;
-  --ink: #1d1c19;
-  --ink-dim: #5c584e;
-  --ink-mute: #8b8676;
-  --on-accent: #fff8f0;
+  --surface: #eef1ea;
+  --surface-strong: #e2e7dd;
+  --line: #dde2d7;
+  --line-strong: #c7cebb;
+  --accent: #2d4f72;
+  --accent-dim: #3c6b4a;
+  --ink: #16211c;
+  --ink-dim: #4c564e;
+  --ink-mute: #6d7569;
+  --on-accent: #f6f8f5;
   --max: 1180px;
 }
 * {
@@ -87,9 +89,9 @@ header {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
 }
 nav.wrap {
   display: flex;
@@ -100,22 +102,10 @@ nav.wrap {
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
-  font-family: var(--font-fraunces), serif;
-  font-size: 20px;
-  color: var(--ink);
-  font-weight: 600;
 }
-.brand .mark {
-  width: 32px;
-  height: 32px;
-  background: var(--ink);
-  color: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-family: var(--font-fraunces), serif;
+.brand-logo {
+  height: 56px;
+  width: auto;
 }
 .navlinks {
   display: flex;
@@ -636,7 +626,8 @@ form .btn:hover {
 /* ---------- FOOTER ---------- */
 footer {
   padding: 56px 0 36px;
-  border-top: 1px solid var(--line);
+  background: var(--surface-strong);
+  border-top: 1px solid var(--line-strong);
 }
 .footer-top {
   display: flex;
@@ -670,23 +661,14 @@ footer {
 }
 .footer-social {
   display: flex;
-  gap: 14px;
+  gap: 16px;
 }
 .footer-social a {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--line-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex;
   color: var(--ink-dim);
-  font-size: 13px;
-  transition:
-    border-color 0.2s,
-    color 0.2s;
+  transition: color 0.2s;
 }
 .footer-social a:hover {
-  border-color: var(--accent);
   color: var(--accent-dim);
 }
 .footer-bottom {
@@ -696,8 +678,15 @@ footer {
   gap: 14px;
   font-size: 12.5px;
   color: var(--ink-mute);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-strong);
   padding-top: 24px;
+}
+.footer-bottom a {
+  color: var(--ink-dim);
+  transition: color 0.2s;
+}
+.footer-bottom a:hover {
+  color: var(--accent-dim);
 }
 
 /* ---------- RESPONSIVE ---------- */
