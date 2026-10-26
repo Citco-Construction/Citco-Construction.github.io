@@ -24,8 +24,8 @@ export default function ContactPageEs() {
           __html: JSON.stringify(pageBreadcrumbSchema("contact", "/contact", "es")),
         }}
       />
-      <section className="bg-2">
-        <div className="wrap contact-grid" style={{ paddingTop: 96 }}>
+      <section className="page-hero">
+        <div className="wrap contact-grid">
           <div>
             <Breadcrumbs items={pageBreadcrumbItems("contact", "/contact", "es")} />
             <span className="eyebrow">Póngase en Contacto</span>
