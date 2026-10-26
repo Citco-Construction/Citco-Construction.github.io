@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Breadcrumbs } from "@/app/breadcrumbs";
+import { LinkedInIcon } from "@/app/social-icons";
 import { pageMetadata } from "@/lib/metadata";
 import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
@@ -43,7 +44,18 @@ export default function AboutPageEs() {
             />
           </div>
           <div className="profile-copy">
-            <h3>{siteConfig.officers[1].name}</h3>
+            <h3>
+              {siteConfig.officers[1].name}
+              <a
+                href={siteConfig.officers[1].linkedInUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="profile-linkedin"
+                aria-label={`${siteConfig.officers[1].name} en LinkedIn`}
+              >
+                <LinkedInIcon />
+              </a>
+            </h3>
             <p className="role">
               {siteConfig.officers[1].title}, {siteConfig.legalName}
             </p>
