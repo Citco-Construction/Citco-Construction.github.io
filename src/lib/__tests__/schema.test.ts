@@ -13,7 +13,10 @@ describe("generateOrganizationSchema", () => {
   it("only includes verified social profile links in sameAs", () => {
     const schema = generateOrganizationSchema();
 
-    expect(schema.sameAs).toEqual(["https://github.com/Citco-Construction"]);
+    expect(schema.sameAs).toEqual([
+      "https://www.linkedin.com/company/citco-construction-inc",
+      "https://github.com/Citco-Construction",
+    ]);
   });
 });
 

@@ -53,16 +53,20 @@ export const sitePages: SitePage[] = [
 // but still need sitemap coverage and a footer link.
 export const legalPages: SitePage[] = [{ path: "/privacy", labelKey: "privacy" }];
 
-// No company-specific Instagram/LinkedIn handles were provided yet, so those two
-// link to the platform root rather than a real profile, so isProfile stays false for
-// them so generateOrganizationSchema doesn't cite a generic homepage as "sameAs" this
-// business. GitHub links to the org's actual account, so it's a real profile link.
+// No company-specific Instagram handle was provided yet, so it links to the platform
+// root rather than a real profile, so isProfile stays false for it so
+// generateOrganizationSchema doesn't cite a generic homepage as "sameAs" this business.
+// GitHub and LinkedIn link to the org's actual accounts, so they're real profile links.
 export const socialLinks: {
   name: "Instagram" | "LinkedIn" | "GitHub";
   url: string;
   isProfile: boolean;
 }[] = [
   { name: "Instagram", url: "https://instagram.com", isProfile: false },
-  { name: "LinkedIn", url: "https://linkedin.com", isProfile: false },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/citco-construction-inc",
+    isProfile: true,
+  },
   { name: "GitHub", url: "https://github.com/Citco-Construction", isProfile: true },
 ];
