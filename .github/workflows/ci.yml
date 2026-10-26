@@ -155,23 +155,10 @@ jobs:
           args: "src --exit-warning"
 
   e2e:
-    name: e2e
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/aglflorida/ci-playwright:latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v7
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
-
-      - name: Run e2e
-        run: npm run test:e2e
+      - uses: actions/checkout@v7
+      - run: npm ci
+      - run: npm run test:e2e
