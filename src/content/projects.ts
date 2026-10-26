@@ -84,26 +84,26 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "104-san-sebastian",
-    title: { en: "104 San Sebastian", es: "104 San Sebastian" },
+    slug: "san-sebastian",
+    title: { en: "San Sebastian", es: "San Sebastian" },
     category: { en: "Exterior Renovation", es: "Renovación Exterior" },
     images: ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"],
   },
   {
-    slug: "104-san-sebastian-solar",
-    title: { en: "104 San Sebastian - Solar", es: "104 San Sebastian - Solar" },
+    slug: "san-sebastian-solar",
+    title: { en: "San Sebastian - Solar", es: "San Sebastian - Solar" },
     category: { en: "Solar Panel Installation", es: "Instalación de Paneles Solares" },
     images: ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"],
   },
   {
-    slug: "1104-cpp-roof",
-    title: { en: "1104 CPP", es: "1104 CPP" },
+    slug: "cpp-roof",
+    title: { en: "CPP", es: "CPP" },
     category: { en: "Roofing", es: "Techado" },
     images: ["01.jpg", "02.jpg"],
   },
   {
-    slug: "1206-cordova",
-    title: { en: "1206 Cordova", es: "1206 Cordova" },
+    slug: "cordova",
+    title: { en: "Cordova", es: "Cordova" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -135,8 +135,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "1365-alegriano",
-    title: { en: "1365 Alegriano", es: "1365 Alegriano" },
+    slug: "alegriano",
+    title: { en: "Alegriano", es: "Alegriano" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -210,14 +210,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "1428-alegriano-ave",
-    title: { en: "1428 Alegriano Avenue", es: "1428 Avenida Alegriano" },
+    slug: "alegriano-ave",
+    title: { en: "Alegriano Avenue", es: "Avenida Alegriano" },
     category: { en: "Renovation", es: "Renovación" },
     images: ["01.jpg"],
   },
   {
-    slug: "2225-fisher-island",
-    title: { en: "2225 Fisher Island", es: "2225 Fisher Island" },
+    slug: "fisher-island",
+    title: { en: "Fisher Island", es: "Fisher Island" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -249,14 +249,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "5441-banyan-drive",
-    title: { en: "5441 Banyan Drive", es: "5441 Banyan Drive" },
+    slug: "banyan-drive",
+    title: { en: "Banyan Drive", es: "Banyan Drive" },
     category: { en: "Renovation", es: "Renovación" },
     images: ["01.jpg", "02.jpg"],
   },
   {
-    slug: "5505-oakwood",
-    title: { en: "5505 Oakwood", es: "5505 Oakwood" },
+    slug: "oakwood",
+    title: { en: "Oakwood", es: "Oakwood" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -273,14 +273,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "5710-michelangelo",
-    title: { en: "5710 Michelangelo", es: "5710 Michelangelo" },
+    slug: "michelangelo",
+    title: { en: "Michelangelo", es: "Michelangelo" },
     category: { en: "Renovation", es: "Renovación" },
     images: ["01.jpg", "02.jpg"],
   },
   {
-    slug: "5725-michelangelo-pavers",
-    title: { en: "5725 Michelangelo", es: "5725 Michelangelo" },
+    slug: "michelangelo-pavers",
+    title: { en: "Michelangelo - Pavers", es: "Michelangelo - Adoquines" },
     category: { en: "Paver Installation", es: "Instalación de Adoquines" },
     images: [
       "01.jpg",
@@ -298,8 +298,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "918-malaga-driveway",
-    title: { en: "918 Malaga - Driveway", es: "918 Málaga - Entrada" },
+    slug: "malaga-driveway",
+    title: { en: "Malaga - Driveway", es: "Málaga - Entrada" },
     category: { en: "Driveway", es: "Entrada de Autos" },
     images: [
       "01.jpg",
@@ -320,8 +320,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "918-malaga-kitchen",
-    title: { en: "918 Malaga - Kitchen", es: "918 Málaga - Cocina" },
+    slug: "malaga-kitchen",
+    title: { en: "Malaga - Kitchen", es: "Málaga - Cocina" },
     category: { en: "Kitchen Remodel", es: "Remodelación de Cocina" },
     images: [
       "01.jpg",
@@ -358,8 +358,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "1100-cordova",
-    title: { en: "1100 Cordova", es: "1100 Cordova" },
+    slug: "2-cordova",
+    title: { en: "2-Cordova", es: "2-Cordova" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -374,8 +374,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "1200-ccp",
-    title: { en: "1200 CCP", es: "1200 CCP" },
+    slug: "ccp",
+    title: { en: "CCP", es: "CCP" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -393,8 +393,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "3511-aldrich",
-    title: { en: "3511 Aldrich", es: "3511 Aldrich" },
+    slug: "aldrich",
+    title: { en: "Aldrich", es: "Aldrich" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
@@ -515,8 +515,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "4911-biltmore",
-    title: { en: "4911 Biltmore", es: "4911 Biltmore" },
+    slug: "biltmore",
+    title: { en: "Biltmore", es: "Biltmore" },
     category: { en: "Renovation", es: "Renovación" },
     images: [
       "01.jpg",
