@@ -495,21 +495,10 @@ section[id] {
   object-fit: cover;
 }
 .profile-copy h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-size: 24px;
   color: var(--ink);
   margin-bottom: 6px;
   font-weight: 600;
-}
-.profile-linkedin {
-  display: inline-flex;
-  color: var(--ink-dim);
-  transition: color 0.2s;
-}
-.profile-linkedin:hover {
-  color: var(--accent-dim);
 }
 .profile-copy .role {
   color: var(--ink-dim);
@@ -519,6 +508,21 @@ section[id] {
 .profile-copy .tenure {
   color: var(--ink-mute);
   font-size: 13.5px;
+}
+.profile-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink-dim);
+  transition: color 0.2s, border-color 0.2s;
+}
+.profile-linkedin:hover {
+  color: var(--accent-dim);
+  border-color: var(--accent-dim);
 }
 .license-card {
   border: 1px solid var(--line);
