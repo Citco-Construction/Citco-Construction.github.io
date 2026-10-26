@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -14,49 +15,63 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   const primaryPages = sitePages.filter((page) => page.path !== "/contact");
   const contactPage = sitePages.find((page) => page.path === "/contact");
 
+  const renderLinks = (onNavigate: () => void) => (
+    <>
+      {primaryPages.map((page) => (
+        <Link
+          key={page.path}
+          href={localizePath(page.path, locale)}
+          className={canonicalPath === page.path ? "active" : ""}
+          onClick={onNavigate}
+        >
+          {nav[page.labelKey][locale]}
+        </Link>
+      ))}
+      <Link
+        href={localizePath(canonicalPath, otherLocale(locale))}
+        className="navlang"
+        onClick={onNavigate}
+      >
+        🌐 {ui.languageSwitchLabel[locale]}
+      </Link>
+      {contactPage && (
+        <Link href={localizePath(contactPage.path, locale)} className="navcta" onClick={onNavigate}>
+          {ui.requestConsultation[locale]}
+        </Link>
+      )}
+    </>
+  );
+
   return (
     <header>
       <nav className="wrap">
         <Link href={localizePath("/", locale)} className="brand">
-          <img src="/logo_header.png" alt={siteConfig.name} className="brand-logo" />
+          <Image
+            src="/logo_header.png"
+            alt={siteConfig.name}
+            className="brand-logo"
+            width={1732}
+            height={536}
+            priority
+          />
         </Link>
-        <div className={`navlinks${open ? " open" : ""}`} id="navLinks">
-          {primaryPages.map((page) => (
-            <Link
-              key={page.path}
-              href={localizePath(page.path, locale)}
-              className={canonicalPath === page.path ? "active" : ""}
-              onClick={() => setOpen(false)}
-            >
-              {nav[page.labelKey][locale]}
-            </Link>
-          ))}
-          <Link
-            href={localizePath(canonicalPath, otherLocale(locale))}
-            className="navlang"
-            onClick={() => setOpen(false)}
-          >
-            🌐 {ui.languageSwitchLabel[locale]}
-          </Link>
-          {contactPage && (
-            <Link
-              href={localizePath(contactPage.path, locale)}
-              className="navcta"
-              onClick={() => setOpen(false)}
-            >
-              {ui.requestConsultation[locale]}
-            </Link>
-          )}
-        </div>
+        <div className="navlinks navlinks-desktop">{renderLinks(() => {})}</div>
         <button
           className="burger"
           aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="navLinksMobile"
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setOpen(!open)}
         >
           ☰
         </button>
       </nav>
+      {open && (
+        <div className="navlinks navlinks-mobile" id="navLinksMobile">
+          {renderLinks(() => setOpen(false))}
+        </div>
+      )}
     </header>
   );
 }

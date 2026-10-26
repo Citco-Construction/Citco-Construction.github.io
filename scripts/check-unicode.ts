@@ -8,8 +8,8 @@
  * allowed and excluded from this check.
  */
 
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 const SRC_DIR = path.join(process.cwd(), "src");
 

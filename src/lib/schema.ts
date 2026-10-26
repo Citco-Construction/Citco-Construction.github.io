@@ -80,7 +80,7 @@ export function pageBreadcrumbItems(
   ];
 }
 
-/** Home > current page. Omit on the homepage itself — a BreadcrumbList needs at least two items. */
+/** Home > current page. Omit on the homepage itself, since a BreadcrumbList needs at least two items. */
 export function pageBreadcrumbSchema(labelKey: keyof typeof nav, path: string, locale: Locale) {
   return absoluteBreadcrumbSchema(pageBreadcrumbItems(labelKey, path, locale));
 }

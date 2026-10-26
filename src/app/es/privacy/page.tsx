@@ -46,7 +46,7 @@ export default function PrivacyPageEs() {
           <p>
             <strong>Lo que no hacemos.</strong> No vendemos ni compartimos su información con
             terceros. Este sitio no utiliza análisis, píxeles de seguimiento ni cookies
-            publicitarias — no rastreamos a los visitantes.
+            publicitarias. No rastreamos a los visitantes.
           </p>
           <p>
             <strong>Preguntas.</strong> Escríbanos a{" "}

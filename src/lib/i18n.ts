@@ -35,8 +35,13 @@ export const ui = {
   languageSwitchLabel: { en: "Español", es: "English" } as Dict,
   requestConsultation: { en: "Request a Consultation", es: "Solicitar una Consulta" } as Dict,
   seHablaEspanol: {
-    en: "Se habla español — consultas disponibles en español",
-    es: "Se habla español — consultas y presupuestos disponibles en español",
+    en: "Se habla español, consultas disponibles en español",
+    es: "Se habla español, consultas y presupuestos disponibles en español",
+  } as Dict,
+  seHablaEspanolShort: { en: "Se habla español", es: "Se habla español" } as Dict,
+  seHablaEspanolExtra: {
+    en: ", consultas disponibles en español",
+    es: ", consultas y presupuestos disponibles en español",
   } as Dict,
   viewOurWork: { en: "View Our Work", es: "Ver Nuestro Trabajo" } as Dict,
   familyOwnedSince: { en: "Family Owned Since 1982", es: "Empresa Familiar Desde 1982" } as Dict,

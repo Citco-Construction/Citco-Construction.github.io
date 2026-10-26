@@ -25,7 +25,7 @@ export default function ServicesPage() {
         <div className="wrap">
           <Breadcrumbs items={pageBreadcrumbItems("services", "/services", "en")} />
           <span className="eyebrow">What We Build</span>
-          <h1>General contracting services for Miami-Dade homes.</h1>
+          <h1>General contracting services for Miami-Dade.</h1>
           <p>
             Citco Construction is a licensed general contractor focused on residential work in Coral
             Gables and across Miami-Dade: additions, major renovations, and full kitchen and
@@ -39,10 +39,9 @@ export default function ServicesPage() {
         <div className="wrap">
           <div className="services-grid">
             <div className="service-card service-primary">
-              <span className="tagnum">01 — Primary Focus</span>
               <h3>Additions &amp; Major Renovations</h3>
               <p>
-                Expanding a home or reworking it top to bottom — structural changes, new square
+                Expanding a home or reworking it top to bottom: structural changes, new square
                 footage, and full-scope renovations that touch every room.
               </p>
               <ul>
@@ -53,7 +52,7 @@ export default function ServicesPage() {
               </ul>
             </div>
             <div className="service-card">
-              <span className="tagnum">02 — Kitchens</span>
+              <span className="tagnum">Kitchens</span>
               <h3>Kitchen Remodels</h3>
               <p>Full kitchen remodels built around how a family actually cooks and gathers.</p>
               <ul>
@@ -63,7 +62,7 @@ export default function ServicesPage() {
               </ul>
             </div>
             <div className="service-card">
-              <span className="tagnum">03 — Bathrooms</span>
+              <span className="tagnum">Bathrooms</span>
               <h3>Bathroom Remodels</h3>
               <p>Primary and guest bathroom remodels, from fixtures to finishes.</p>
               <ul>
@@ -71,33 +70,6 @@ export default function ServicesPage() {
                 <li>Guest &amp; Powder Baths</li>
                 <li>Tile, Fixtures &amp; Waterproofing</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-2">
-        <div className="wrap">
-          <div className="sec-head">
-            <span className="eyebrow">Owner&rsquo;s Rep</span>
-            <h2>Pre-construction &amp; consulting.</h2>
-            <p>Budgeting, scheduling, and permitting guidance before the first wall comes down.</p>
-          </div>
-          <div className="approach-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
-            <div className="approach-item">
-              <div className="idx">01</div>
-              <h4>Feasibility &amp; Estimating</h4>
-              <p>A realistic read on scope, cost, and timeline before you commit.</p>
-            </div>
-            <div className="approach-item">
-              <div className="idx">02</div>
-              <h4>Permit Expediting</h4>
-              <p>Full coordination across Miami-Dade and Coral Gables permitting offices.</p>
-            </div>
-            <div className="approach-item">
-              <div className="idx">03</div>
-              <h4>Vendor &amp; Trade Management</h4>
-              <p>Vetted trade partners held to a single standard, managed by ownership.</p>
             </div>
           </div>
         </div>

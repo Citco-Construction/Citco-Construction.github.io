@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
@@ -32,6 +33,26 @@ export default function AboutPage() {
       </section>
 
       <section>
+        <div className="wrap profile-grid">
+          <div className="profile-photo">
+            <Image
+              src="/images/chris-vidal.jpg"
+              alt={siteConfig.officers[1].name}
+              fill
+              sizes="(max-width: 920px) 160px, 240px"
+            />
+          </div>
+          <div className="profile-copy">
+            <h3>{siteConfig.officers[1].name}</h3>
+            <p className="role">
+              {siteConfig.officers[1].title}, {siteConfig.legalName}
+            </p>
+            <p className="tenure">Since 2004</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div className="wrap about-grid">
           <div className="about-copy">
             <p>
@@ -47,12 +68,11 @@ export default function AboutPage() {
             <p>
               Today Citco focuses on{" "}
               <strong>residential additions, major renovations, kitchens, and bathrooms</strong>{" "}
-              across Miami-Dade — work on the homes people actually live in.
+              across Miami-Dade: work on the homes people actually live in.
             </p>
             <p>
-              Leadership: <strong>{siteConfig.officers[0].name}</strong> (
-              {siteConfig.officers[0].title}) and <strong>{siteConfig.officers[1].name}</strong> (
-              {siteConfig.officers[1].title}).
+              <strong>{siteConfig.officers[0].name}</strong> ({siteConfig.officers[0].title}) and{" "}
+              <strong>{siteConfig.officers[1].name}</strong> ({siteConfig.officers[1].title}).
             </p>
           </div>
           <div className="license-card">
@@ -93,7 +113,7 @@ export default function AboutPage() {
             </div>
             <div className="license-badge">
               <span className="dot" />
-              Current &amp; Active — Florida DBPR
+              Active and current with the Florida DBPR
             </div>
           </div>
         </div>
@@ -103,21 +123,27 @@ export default function AboutPage() {
         <div className="wrap" style={{ maxWidth: 900 }}>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <img
+              <Image
                 src="/images/about-kitchen.jpg"
                 alt="A Citco Construction kitchen and dining remodel"
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
               />
             </div>
             <div className="gallery-item">
-              <img
+              <Image
                 src="/images/about-exterior.jpg"
                 alt="A Coral Gables home exterior built by Citco Construction"
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
               />
             </div>
             <div className="gallery-item">
-              <img
+              <Image
                 src="/images/about-living-room.jpg"
                 alt="A living room remodel by Citco Construction"
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
               />
             </div>
           </div>
