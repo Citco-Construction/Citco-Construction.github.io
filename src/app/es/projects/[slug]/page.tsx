@@ -18,7 +18,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) {
-    return pageMetadata({ title: "Proyecto", description: "", path: "/projects", locale: "es" });
+    return pageMetadata({
+      title: "Proyecto",
+      description: "Explore proyectos de renovación y construcción de Citco Construction.",
+      path: "/projects",
+      locale: "es",
+    });
   }
 
   return pageMetadata({
@@ -26,6 +31,7 @@ export async function generateMetadata({
     description: `Trabajo de ${project.category.es.toLowerCase()} realizado por Citco Construction en Miami-Dade, FL.`,
     path: `/projects/${project.slug}`,
     locale: "es",
+    image: `/images/projects/${project.slug}/${project.images[0]}`,
   });
 }
 

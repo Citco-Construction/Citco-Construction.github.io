@@ -18,6 +18,12 @@ describe("generateOrganizationSchema", () => {
       "https://github.com/Citco-Construction",
     ]);
   });
+
+  it("includes an absolute image URL for rich result eligibility", () => {
+    const schema = generateOrganizationSchema();
+
+    expect(schema.image).toBe(`${siteConfig.url}/images/hero-kitchen.jpg`);
+  });
 });
 
 describe("generateBreadcrumbSchema", () => {

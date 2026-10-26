@@ -8,6 +8,7 @@ export function generateOrganizationSchema() {
     name: siteConfig.legalName,
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
+    image: `${siteConfig.url}/images/hero-kitchen.jpg`,
     description: siteConfig.shortDescription,
     foundingDate: `${siteConfig.foundingYear}`,
     email: siteConfig.email,
