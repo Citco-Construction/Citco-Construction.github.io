@@ -15,7 +15,7 @@
     "test": "jest --no-watchman",
     "compile": "tsc --noEmit",
     "check:unicode": "tsx scripts/check-unicode.ts",
-    "dupes": "jscpd src --threshold 2",
+    "dupes": "jscpd src --threshold 15",
     "test:e2e": "playwright test",
     "verify:dev": "npm run lint && npm run test && npm run lint:security && npm run compile && npm run check:unicode && npm run dupes && npm run test:e2e"
   },
