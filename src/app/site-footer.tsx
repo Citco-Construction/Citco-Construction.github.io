@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { type Locale, localizePath, nav, ui } from "@/lib/i18n";
@@ -33,17 +34,28 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     <footer>
       <div className="wrap">
         <div className="footer-top">
-          <Link href={localizePath("/", locale)} className="brand">
-            <img src="/logo_header.png" alt={siteConfig.name} className="brand-logo" />
-          </Link>
+          <div className="footer-brand">
+            <Link href={localizePath("/", locale)} className="brand">
+              <Image
+                src="/logo_header.png"
+                alt={siteConfig.name}
+                className="brand-logo"
+                width={1732}
+                height={536}
+              />
+            </Link>
+            <span className="footer-tagline">{ui.familyOwnedSince[locale]}</span>
+          </div>
           <div className="footer-links">
-            <div className="footer-col">
+            <div className="footer-col footer-col-company">
               <h5>{locale === "en" ? "Company" : "Compañía"}</h5>
-              {[...sitePages.filter((page) => page.path !== "/"), ...legalPages].map((page) => (
-                <Link key={page.path} href={localizePath(page.path, locale)}>
-                  {nav[page.labelKey][locale]}
-                </Link>
-              ))}
+              <div className="footer-col-links">
+                {[...sitePages.filter((page) => page.path !== "/"), ...legalPages].map((page) => (
+                  <Link key={page.path} href={localizePath(page.path, locale)}>
+                    {nav[page.labelKey][locale]}
+                  </Link>
+                ))}
+              </div>
             </div>
             <div className="footer-col">
               <h5>{locale === "en" ? "Contact" : "Contacto"}</h5>
@@ -56,18 +68,14 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               >
                 <svg
                   viewBox="0 0 24 24"
-                  width={14}
-                  height={14}
+                  width={16}
+                  height={16}
                   fill="currentColor"
                   aria-hidden="true"
                 >
                   <path d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.25 6.52 11.73 6.8 12 .2.2.5.3.7.3s.5-.1.7-.3c.28-.27 6.8-6.75 6.8-12C19.5 5.36 16.14 2 12 2Zm0 10.5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3Z" />
                 </svg>
-                <span>
-                  {siteConfig.address.street}
-                  <br />
-                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
-                </span>
+                <span>{siteConfig.address.street}</span>
               </a>
               <p>
                 <a href={telHref(siteConfig.phoneOffice)}>{siteConfig.phoneOffice}</a>
@@ -81,7 +89,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               <p>{siteConfig.license.type}</p>
             </div>
             <div className="footer-col">
-              <h5>{locale === "en" ? "Follow" : "Síguenos"}</h5>
+              <h5>{locale === "en" ? "Connect" : "Síguenos"}</h5>
               <div className="footer-social">
                 {socialLinks.map((link) => (
                   <a
@@ -103,7 +111,6 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             &copy; {new Date().getFullYear()} {siteConfig.legalName}.{" "}
             {locale === "en" ? "All rights reserved." : "Todos los derechos reservados."}
           </span>
-          <span>{ui.familyOwnedSince[locale]}</span>
           <span>
             {ui.designedBy[locale]}{" "}
             <a href="https://aglflorida.com" target="_blank" rel="noreferrer">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/app/breadcrumbs";
 import { projects } from "@/content/projects";
@@ -63,10 +64,12 @@ export default async function ProjectDetailPageEs({
           <div className="gallery-grid">
             {project.images.map((image, i) => (
               <div className="gallery-item" key={image}>
-                <img
+                <Image
                   src={`/images/projects/${project.slug}/${image}`}
                   alt={`${project.title.es}, vista ${i + 1} de ${project.images.length}`}
-                  loading={i === 0 ? "eager" : "lazy"}
+                  fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
+                  priority={i === 0}
                 />
               </div>
             ))}

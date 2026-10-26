@@ -47,8 +47,8 @@ export default function ContactPage() {
                 maxWidth: 440,
               }}
             >
-              Every project starts with a direct conversation — not a call center. Tell us about
-              your addition, renovation, kitchen, or bathroom.
+              Every project starts with a direct conversation, not a call center. Tell us about your
+              addition, renovation, kitchen, or bathroom.
             </p>
             <p style={{ color: "var(--ink-dim)", fontSize: "15.5px", maxWidth: 440 }}>
               {ui.seHablaEspanol.en}

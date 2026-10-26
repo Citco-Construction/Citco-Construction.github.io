@@ -5,7 +5,7 @@ import { legalPages, siteConfig, sitePages } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-/** next.config.ts sets trailingSlash: true — every served/canonical URL ends in "/", so the sitemap must match. */
+/** next.config.ts sets trailingSlash: true, so every served/canonical URL ends in "/" and the sitemap must match. */
 function withTrailingSlash(path: string): string {
   return path.endsWith("/") ? path : `${path}/`;
 }

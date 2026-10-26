@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           <p>
             <strong>What we don&rsquo;t do.</strong> We don&rsquo;t sell or share your information
             with third parties. This site doesn&rsquo;t run analytics, tracking pixels, or
-            advertising cookies — we don&rsquo;t track visitors.
+            advertising cookies. We don&rsquo;t track visitors.
           </p>
           <p>
             <strong>Questions.</strong> Email us at{" "}
