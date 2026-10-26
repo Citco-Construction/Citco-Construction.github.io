@@ -24,7 +24,11 @@ export const siteConfig = {
   foundingYear: 1982,
   officers: [
     { name: "Sergio C. Vidal", title: "President" },
-    { name: "Christopher M. Vidal", title: "VP, Treasurer" },
+    {
+      name: "Christopher M. Vidal",
+      title: "VP, Treasurer",
+      linkedInUrl: "https://www.linkedin.com/in/chris-vidal-a4804914/",
+    },
   ],
 } as const;
 
