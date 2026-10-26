@@ -18,7 +18,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) {
-    return pageMetadata({ title: "Project", description: "", path: "/projects", locale: "en" });
+    return pageMetadata({
+      title: "Project",
+      description: "Browse completed renovation and construction projects by Citco Construction.",
+      path: "/projects",
+      locale: "en",
+    });
   }
 
   return pageMetadata({
@@ -26,6 +31,7 @@ export async function generateMetadata({
     description: `${project.category.en} completed by Citco Construction in Miami-Dade, FL.`,
     path: `/projects/${project.slug}`,
     locale: "en",
+    image: `/images/projects/${project.slug}/${project.images[0]}`,
   });
 }
 
