@@ -45,9 +45,9 @@ npm run start
 | `npm run compile` | TypeScript type-check (`tsc --noEmit`) |
 | `npm run check:unicode` | Flags smart-quote/typography unicode characters in source |
 | `npm run dupes` | Duplicate-code check (jscpd) |
-| `npm run verify:dev` | Runs all of the above, in the order CI expects |
+| `npm run verify:dev` | Runs all of the above (lint, test, lint:security, compile, check:unicode, dupes, test:e2e) |
 
-Run `npm run verify:dev` before opening a PR — it mirrors the checks in `.github/workflows/ci.yml`.
+Run `npm run verify:dev` before opening a PR. It covers most of what `.github/workflows/ci.yml` checks, but not the `build` job — run `npm run build` too if you touched routes, data loading, or anything that affects the static export.
 
 ## Project structure
 
