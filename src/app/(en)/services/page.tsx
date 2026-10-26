@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Services",
+  title: "General Contracting Services in Miami-Dade",
   description:
-    "Residential additions, major renovations, kitchen remodels, and bathroom remodels from Citco Construction in Coral Gables, FL.",
+    "Residential additions, major renovations, kitchen remodels, and bathroom remodels from a licensed general contractor serving Coral Gables and Miami-Dade, FL.",
   path: "/services",
   locale: "en",
 });
@@ -22,12 +23,14 @@ export default function ServicesPage() {
       />
       <section className="page-hero">
         <div className="wrap">
+          <Breadcrumbs items={pageBreadcrumbItems("services", "/services", "en")} />
           <span className="eyebrow">What We Build</span>
-          <h1>Services</h1>
+          <h1>General contracting services for Miami-Dade homes.</h1>
           <p>
-            Citco Construction focuses on residential work: additions, major renovations, and full
-            kitchen and bathroom remodels — each run with the same disciplined process from first
-            consult to final walkthrough.
+            Citco Construction is a licensed general contractor focused on residential work in Coral
+            Gables and across Miami-Dade: additions, major renovations, and full kitchen and
+            bathroom remodels, each run with the same disciplined process from first consult to
+            final walkthrough.
           </p>
         </div>
       </section>

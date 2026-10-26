@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
@@ -22,6 +23,7 @@ export default function PrivacyPageEs() {
       />
       <section className="page-hero">
         <div className="wrap">
+          <Breadcrumbs items={pageBreadcrumbItems("privacy", "/privacy", "es")} />
           <span className="eyebrow">Su Información</span>
           <h1>Política de Privacidad</h1>
           <p>Última actualización: octubre de 2026.</p>

@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { projects } from "@/content/projects";
 import { ui } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Home",
+  title: "General Contractor in Coral Gables and Miami-Dade",
   description: siteConfig.shortDescription,
   path: "/",
   locale: "en",
 });
+
+// The three Chawla/Burnstein/Kern kitchen remodels are the first entries in projects.ts.
+const featuredProjects = projects.slice(0, 3);
 
 export default function HomePage() {
   return (
@@ -22,8 +26,8 @@ export default function HomePage() {
               <h1>Additions and renovations, done the way they should be done.</h1>
               <p className="lede">
                 Citco Construction is a family-owned general contractor delivering residential
-                additions, major renovations, kitchens, and bathrooms across Miami-Dade — careful
-                planning, honest scheduling, and a finished product built to last.
+                additions, major renovations, kitchens, and bathrooms across Miami-Dade, with
+                careful planning and honest scheduling.
               </p>
             </div>
             <div className="hero-side">
@@ -176,52 +180,25 @@ export default function HomePage() {
         <div className="wrap">
           <div className="sec-head">
             <span className="eyebrow">Selected Work</span>
-            <h2>A portfolio in progress.</h2>
-            <p>
-              This demo site showcases the categories Citco Construction builds in. Project
-              photography is added as real job photos are brought over from the company archive.
-            </p>
+            <h2>Recent kitchens, built by Citco.</h2>
+            <p>A few finished kitchen remodels from across Miami-Dade.</p>
           </div>
           <div className="projects-grid">
-            <div className="proj">
-              <div className="ph">
-                <img
-                  src="/images/placeholder/project-4x3.png"
-                  alt="Placeholder — room addition"
-                  loading="lazy"
-                />
-              </div>
-              <div className="info">
-                <span className="tag">Addition · Coral Gables</span>
-                <h4>Second-Story Addition</h4>
-              </div>
-            </div>
-            <div className="proj">
-              <div className="ph">
-                <img
-                  src="/images/placeholder/project-4x3.png"
-                  alt="Placeholder — kitchen remodel"
-                  loading="lazy"
-                />
-              </div>
-              <div className="info">
-                <span className="tag">Kitchen · Coral Gables</span>
-                <h4>Custom Kitchen Remodel</h4>
-              </div>
-            </div>
-            <div className="proj">
-              <div className="ph">
-                <img
-                  src="/images/placeholder/project-4x3.png"
-                  alt="Placeholder — bathroom remodel"
-                  loading="lazy"
-                />
-              </div>
-              <div className="info">
-                <span className="tag">Bathroom · Miami</span>
-                <h4>Primary Bathroom Remodel</h4>
-              </div>
-            </div>
+            {featuredProjects.map((project) => (
+              <Link href={`/projects/${project.slug}`} className="proj" key={project.slug}>
+                <div className="ph">
+                  <img
+                    src={`/images/projects/${project.slug}/${project.images[0]}`}
+                    alt={project.title.en}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="info">
+                  <span className="tag">{project.category.en}</span>
+                  <h4>{project.title.en}</h4>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

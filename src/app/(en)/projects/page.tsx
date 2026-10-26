@@ -1,23 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Breadcrumbs } from "@/app/breadcrumbs";
+import { projects } from "@/content/projects";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Projects",
+  title: "Completed Projects in Coral Gables and Miami",
   description:
-    "A sample of the additions, renovations, kitchens, and bathrooms Citco Construction builds.",
+    "Additions, renovations, kitchens, and bathrooms built by Citco Construction, a general contractor serving Coral Gables and Miami-Dade, FL.",
   path: "/projects",
   locale: "en",
 });
-
-const projects = [
-  { tag: "Addition · Coral Gables", title: "Second-Story Addition" },
-  { tag: "Renovation · Coral Gables", title: "Whole-Home Renovation" },
-  { tag: "Kitchen · Coral Gables", title: "Custom Kitchen Remodel" },
-  { tag: "Bathroom · Miami", title: "Primary Bathroom Remodel" },
-  { tag: "Addition · Coconut Grove", title: "Rear Room Addition" },
-  { tag: "Kitchen · South Miami", title: "Open-Concept Kitchen Remodel" },
-];
 
 export default function ProjectsPage() {
   return (
@@ -31,12 +25,11 @@ export default function ProjectsPage() {
       />
       <section className="page-hero">
         <div className="wrap">
+          <Breadcrumbs items={pageBreadcrumbItems("projects", "/projects", "en")} />
           <span className="eyebrow">Selected Work</span>
-          <h1>Projects</h1>
+          <h1>Projects across Coral Gables and Miami-Dade.</h1>
           <p>
-            This demo site showcases the categories Citco Construction builds in. Real job
-            photography and case studies are added as they&rsquo;re brought over from the company
-            archive.
+            A sample of the jobs Citco Construction, a Miami-Dade general contractor, has built.
           </p>
         </div>
       </section>
@@ -45,19 +38,19 @@ export default function ProjectsPage() {
         <div className="wrap">
           <div className="projects-grid">
             {projects.map((project) => (
-              <div className="proj" key={project.title}>
+              <Link href={`/projects/${project.slug}`} className="proj" key={project.slug}>
                 <div className="ph">
                   <img
-                    src="/images/placeholder/project-4x3.png"
-                    alt={`Placeholder — ${project.title}`}
+                    src={`/images/projects/${project.slug}/${project.images[0]}`}
+                    alt={project.title.en}
                     loading="lazy"
                   />
                 </div>
                 <div className="info">
-                  <span className="tag">{project.tag}</span>
-                  <h4>{project.title}</h4>
+                  <span className="tag">{project.category.en}</span>
+                  <h4>{project.title.en}</h4>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

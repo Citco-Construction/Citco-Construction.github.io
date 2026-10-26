@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About",
+  title: "Miami-Dade General Contractor Since 1982",
   description:
-    "Citco Construction, Inc. — a family-owned general contractor in Coral Gables, FL since 1982.",
+    "Citco Construction, Inc. is a family-owned general contractor serving Coral Gables and Miami-Dade, FL since 1982.",
   path: "/about",
   locale: "en",
 });
@@ -23,6 +24,7 @@ export default function AboutPage() {
       />
       <section className="page-hero">
         <div className="wrap">
+          <Breadcrumbs items={pageBreadcrumbItems("about", "/about", "en")} />
           <span className="eyebrow">Family Owned Since 1982</span>
           <h1>Built by the Vidal family, for Miami.</h1>
           <p>Four decades of residential construction in Coral Gables and greater Miami-Dade.</p>
@@ -99,11 +101,25 @@ export default function AboutPage() {
 
       <section className="bg-2">
         <div className="wrap" style={{ maxWidth: 900 }}>
-          <div className="hero-photo" style={{ height: 360 }}>
-            <img
-              src="/images/placeholder/wide.png"
-              alt="Placeholder of the Citco Construction team"
-            />
+          <div className="gallery-grid">
+            <div className="gallery-item">
+              <img
+                src="/images/about-kitchen.jpg"
+                alt="A Citco Construction kitchen and dining remodel"
+              />
+            </div>
+            <div className="gallery-item">
+              <img
+                src="/images/about-exterior.jpg"
+                alt="A Coral Gables home exterior built by Citco Construction"
+              />
+            </div>
+            <div className="gallery-item">
+              <img
+                src="/images/about-living-room.jpg"
+                alt="A living room remodel by Citco Construction"
+              />
+            </div>
           </div>
         </div>
       </section>

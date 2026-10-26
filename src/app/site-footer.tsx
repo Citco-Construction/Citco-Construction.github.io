@@ -1,7 +1,14 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { type Locale, localizePath, nav, ui } from "@/lib/i18n";
-import { legalPages, siteConfig, sitePages, socialLinks } from "@/lib/site";
+import {
+  addressMapsUrl,
+  legalPages,
+  siteConfig,
+  sitePages,
+  socialLinks,
+  telHref,
+} from "@/lib/site";
 
 const socialIcons: Record<string, ReactNode> = {
   Instagram: (
@@ -40,11 +47,31 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             </div>
             <div className="footer-col">
               <h5>{locale === "en" ? "Contact" : "Contacto"}</h5>
-              <p>{siteConfig.address.street}</p>
+              <a
+                href={addressMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="footer-address"
+                aria-label={locale === "en" ? "Open address in Maps" : "Abrir dirección en Maps"}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width={14}
+                  height={14}
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2C7.86 2 4.5 5.36 4.5 9.5c0 5.25 6.52 11.73 6.8 12 .2.2.5.3.7.3s.5-.1.7-.3c.28-.27 6.8-6.75 6.8-12C19.5 5.36 16.14 2 12 2Zm0 10.5c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3Z" />
+                </svg>
+                <span>
+                  {siteConfig.address.street}
+                  <br />
+                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
+                </span>
+              </a>
               <p>
-                {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
+                <a href={telHref(siteConfig.phoneOffice)}>{siteConfig.phoneOffice}</a>
               </p>
-              <p>{siteConfig.phoneOffice}</p>
             </div>
             <div className="footer-col">
               <h5>{locale === "en" ? "Licensing" : "Licencia"}</h5>

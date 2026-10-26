@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Citco Construction",
   legalName: "Citco Construction, Inc.",
   shortDescription:
-    "Family-owned general contractor in Coral Gables, FL, specializing in residential additions, major renovations, kitchens, and bathrooms since 1982.",
+    "Family-owned general contractor serving Coral Gables and Miami-Dade, FL, specializing in residential additions, major renovations, kitchens, and bathrooms since 1982.",
   url: "https://citcoconstruction.com",
   email: "Chris@citcoconstruction.com",
   phoneOffice: "(305) 642-5555",
@@ -12,6 +12,8 @@ export const siteConfig = {
     city: "Coral Gables",
     state: "FL",
     zip: "33134",
+    lat: 25.765566205887737,
+    lng: -80.25784302883642,
   },
   license: {
     number: "CGC024708",
@@ -25,6 +27,14 @@ export const siteConfig = {
     { name: "Christopher M. Vidal", title: "VP, Treasurer" },
   ],
 } as const;
+
+/** Build a `tel:` href from a formatted US phone number, e.g. "(305) 642-5555" -> "tel:+13056425555". */
+export function telHref(phone: string): string {
+  return `tel:+1${phone.replace(/\D/g, "")}`;
+}
+
+/** Google Maps link for the office address, using known coordinates for precision. */
+export const addressMapsUrl = `https://www.google.com/maps/search/?api=query&query=${siteConfig.address.lat},${siteConfig.address.lng}`;
 
 export type SitePage = {
   path: string;

@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { projects } from "@/content/projects";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Inicio",
+  title: "Contratista General en Coral Gables y Miami-Dade",
   description:
-    "Contratista general familiar en Coral Gables, FL, especializado en ampliaciones residenciales, renovaciones mayores, cocinas y baños desde 1982.",
+    "Contratista general familiar que sirve a Coral Gables y Miami-Dade, FL, especializado en ampliaciones residenciales, renovaciones mayores, cocinas y baños desde 1982.",
   path: "/",
   locale: "es",
 });
+
+// Los tres remodelados de cocina de Chawla/Burnstein/Kern son las primeras entradas en projects.ts.
+const featuredProjects = projects.slice(0, 3);
 
 export default function HomePageEs() {
   return (
@@ -21,8 +25,8 @@ export default function HomePageEs() {
               <h1>Ampliaciones y renovaciones, hechas como deben hacerse.</h1>
               <p className="lede">
                 Citco Construction es un contratista general familiar que realiza ampliaciones
-                residenciales, renovaciones mayores, cocinas y baños en todo Miami-Dade — con
-                planificación cuidadosa, cronogramas honestos y un resultado construido para durar.
+                residenciales, renovaciones mayores, cocinas y baños en todo Miami-Dade, con
+                planificación cuidadosa y cronogramas honestos.
               </p>
             </div>
             <div className="hero-side">
@@ -170,53 +174,25 @@ export default function HomePageEs() {
         <div className="wrap">
           <div className="sec-head">
             <span className="eyebrow">Trabajos Seleccionados</span>
-            <h2>Un portafolio en construcción.</h2>
-            <p>
-              Este sitio de demostración muestra las categorías en las que trabaja Citco
-              Construction. Las fotos reales se incorporan a medida que se trasladan desde el
-              archivo de la empresa.
-            </p>
+            <h2>Cocinas recientes, construidas por Citco.</h2>
+            <p>Algunas remodelaciones de cocina terminadas en todo Miami-Dade.</p>
           </div>
           <div className="projects-grid">
-            <div className="proj">
-              <div className="ph">
-                <img
-                  src="/images/placeholder/project-4x3.png"
-                  alt="Marcador de posición — ampliación de habitación"
-                  loading="lazy"
-                />
-              </div>
-              <div className="info">
-                <span className="tag">Ampliación · Coral Gables</span>
-                <h4>Ampliación de Segundo Piso</h4>
-              </div>
-            </div>
-            <div className="proj">
-              <div className="ph">
-                <img
-                  src="/images/placeholder/project-4x3.png"
-                  alt="Marcador de posición — remodelación de cocina"
-                  loading="lazy"
-                />
-              </div>
-              <div className="info">
-                <span className="tag">Cocina · Coral Gables</span>
-                <h4>Remodelación de Cocina a Medida</h4>
-              </div>
-            </div>
-            <div className="proj">
-              <div className="ph">
-                <img
-                  src="/images/placeholder/project-4x3.png"
-                  alt="Marcador de posición — remodelación de baño"
-                  loading="lazy"
-                />
-              </div>
-              <div className="info">
-                <span className="tag">Baño · Miami</span>
-                <h4>Remodelación de Baño Principal</h4>
-              </div>
-            </div>
+            {featuredProjects.map((project) => (
+              <Link href={`/es/projects/${project.slug}`} className="proj" key={project.slug}>
+                <div className="ph">
+                  <img
+                    src={`/images/projects/${project.slug}/${project.images[0]}`}
+                    alt={project.title.es}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="info">
+                  <span className="tag">{project.category.es}</span>
+                  <h4>{project.title.es}</h4>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -22,8 +22,8 @@ export function generateOrganizationSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 25.765566205887737,
-      longitude: -80.25784302883642,
+      latitude: siteConfig.address.lat,
+      longitude: siteConfig.address.lng,
     },
     areaServed: [
       { "@type": "City", name: "Coral Gables" },
@@ -60,10 +60,45 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
   };
 }
 
+export type BreadcrumbItem = { name: string; href: string };
+
+function absoluteBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return generateBreadcrumbSchema(
+    items.map((item) => ({ name: item.name, url: `${siteConfig.url}${item.href}` })),
+  );
+}
+
+/** Home > current page's breadcrumb items, as site-relative hrefs for the visible <Breadcrumbs> nav. */
+export function pageBreadcrumbItems(
+  labelKey: keyof typeof nav,
+  path: string,
+  locale: Locale,
+): BreadcrumbItem[] {
+  return [
+    { name: nav.home[locale], href: localizePath("/", locale) },
+    { name: nav[labelKey][locale], href: localizePath(path, locale) },
+  ];
+}
+
 /** Home > current page. Omit on the homepage itself — a BreadcrumbList needs at least two items. */
 export function pageBreadcrumbSchema(labelKey: keyof typeof nav, path: string, locale: Locale) {
-  return generateBreadcrumbSchema([
-    { name: nav.home[locale], url: `${siteConfig.url}${localizePath("/", locale)}` },
-    { name: nav[labelKey][locale], url: `${siteConfig.url}${localizePath(path, locale)}` },
-  ]);
+  return absoluteBreadcrumbSchema(pageBreadcrumbItems(labelKey, path, locale));
+}
+
+/** Home > Projects > project title breadcrumb items, for the visible <Breadcrumbs> nav. */
+export function projectBreadcrumbItems(
+  projectTitle: string,
+  slug: string,
+  locale: Locale,
+): BreadcrumbItem[] {
+  return [
+    { name: nav.home[locale], href: localizePath("/", locale) },
+    { name: nav.projects[locale], href: localizePath("/projects", locale) },
+    { name: projectTitle, href: localizePath(`/projects/${slug}`, locale) },
+  ];
+}
+
+/** Home > Projects > project title, for /projects/[slug] detail pages. */
+export function projectBreadcrumbSchema(projectTitle: string, slug: string, locale: Locale) {
+  return absoluteBreadcrumbSchema(projectBreadcrumbItems(projectTitle, slug, locale));
 }

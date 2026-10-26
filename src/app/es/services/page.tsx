@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Servicios",
+  title: "Servicios de Contratista General en Miami-Dade",
   description:
-    "Ampliaciones residenciales, renovaciones mayores, remodelación de cocinas y baños por Citco Construction en Coral Gables, FL.",
+    "Ampliaciones residenciales, renovaciones mayores, remodelación de cocinas y baños por un contratista general licenciado que sirve a Coral Gables y Miami-Dade, FL.",
   path: "/services",
   locale: "es",
 });
@@ -22,12 +23,14 @@ export default function ServicesPageEs() {
       />
       <section className="page-hero">
         <div className="wrap">
+          <Breadcrumbs items={pageBreadcrumbItems("services", "/services", "es")} />
           <span className="eyebrow">Qué Construimos</span>
-          <h1>Servicios</h1>
+          <h1>Servicios de contratista general para hogares en Miami-Dade.</h1>
           <p>
-            Citco Construction se enfoca en trabajo residencial: ampliaciones, renovaciones mayores
-            y remodelaciones completas de cocinas y baños — cada uno con el mismo proceso
-            disciplinado, desde la primera consulta hasta la entrega final.
+            Citco Construction es un contratista general licenciado enfocado en trabajo residencial
+            en Coral Gables y en todo Miami-Dade: ampliaciones, renovaciones mayores y
+            remodelaciones completas de cocinas y baños, cada uno con el mismo proceso disciplinado,
+            desde la primera consulta hasta la entrega final.
           </p>
         </div>
       </section>

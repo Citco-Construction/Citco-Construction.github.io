@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Nosotros",
+  title: "Contratista General en Miami-Dade Desde 1982",
   description:
-    "Citco Construction, Inc. — un contratista general familiar en Coral Gables, FL desde 1982.",
+    "Citco Construction, Inc. es un contratista general familiar que sirve a Coral Gables y Miami-Dade, FL desde 1982.",
   path: "/about",
   locale: "es",
 });
@@ -23,6 +24,7 @@ export default function AboutPageEs() {
       />
       <section className="page-hero">
         <div className="wrap">
+          <Breadcrumbs items={pageBreadcrumbItems("about", "/about", "es")} />
           <span className="eyebrow">Empresa Familiar Desde 1982</span>
           <h1>Construido por la familia Vidal, para Miami.</h1>
           <p>Cuatro décadas de construcción residencial en Coral Gables y el Gran Miami-Dade.</p>
@@ -99,11 +101,25 @@ export default function AboutPageEs() {
 
       <section className="bg-2">
         <div className="wrap" style={{ maxWidth: 900 }}>
-          <div className="hero-photo" style={{ height: 360 }}>
-            <img
-              src="/images/placeholder/wide.png"
-              alt="Foto de marcador de posición del equipo de Citco Construction"
-            />
+          <div className="gallery-grid">
+            <div className="gallery-item">
+              <img
+                src="/images/about-kitchen.jpg"
+                alt="Remodelación de cocina y comedor por Citco Construction"
+              />
+            </div>
+            <div className="gallery-item">
+              <img
+                src="/images/about-exterior.jpg"
+                alt="Exterior de una casa en Coral Gables construida por Citco Construction"
+              />
+            </div>
+            <div className="gallery-item">
+              <img
+                src="/images/about-living-room.jpg"
+                alt="Remodelación de sala por Citco Construction"
+              />
+            </div>
           </div>
         </div>
       </section>

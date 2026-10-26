@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/app/breadcrumbs";
+import { ClockIcon, FileIcon, MailIcon, PhoneIcon, PinIcon } from "@/app/contact-icons";
 import { ui } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
-import { pageBreadcrumbSchema } from "@/lib/schema";
-import { siteConfig } from "@/lib/site";
+import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
+import { addressMapsUrl, siteConfig, telHref } from "@/lib/site";
 import { ContactForm } from "../../contact-form";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Contact",
-  description: "Get in touch with Citco Construction in Coral Gables, FL.",
+  title: "Contact a Coral Gables General Contractor",
+  description:
+    "Get in touch with Citco Construction, a general contractor serving Coral Gables and Miami-Dade, FL.",
   path: "/contact",
   locale: "en",
 });
@@ -25,6 +28,7 @@ export default function ContactPage() {
       <section className="bg-2">
         <div className="wrap contact-grid" style={{ paddingTop: 96 }}>
           <div>
+            <Breadcrumbs items={pageBreadcrumbItems("contact", "/contact", "en")} />
             <span className="eyebrow">Get In Touch</span>
             <h1
               style={{
@@ -33,7 +37,7 @@ export default function ContactPage() {
                 margin: "16px 0 18px",
               }}
             >
-              Start a conversation with ownership.
+              Start a conversation with Citco.
             </h1>
             <p
               style={{
@@ -52,44 +56,58 @@ export default function ContactPage() {
 
             <div style={{ marginTop: 8 }}>
               <div className="info-row">
-                <div className="ico">◈</div>
+                <div className="ico">
+                  <PinIcon />
+                </div>
                 <div>
                   <h5>Office</h5>
-                  <p>
+                  <a href={addressMapsUrl} target="_blank" rel="noreferrer">
                     {siteConfig.address.street}
                     <br />
                     {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
+                  </a>
+                </div>
+              </div>
+              <div className="info-row">
+                <div className="ico">
+                  <PhoneIcon />
+                </div>
+                <div>
+                  <h5>Phone</h5>
+                  <p>
+                    Office <a href={telHref(siteConfig.phoneOffice)}>{siteConfig.phoneOffice}</a>
+                  </p>
+                  <p>
+                    Mobile <a href={telHref(siteConfig.phoneMobile)}>{siteConfig.phoneMobile}</a>
                   </p>
                 </div>
               </div>
               <div className="info-row">
-                <div className="ico">☏</div>
-                <div>
-                  <h5>Phone</h5>
-                  <p>Office {siteConfig.phoneOffice}</p>
-                  <p>Mobile {siteConfig.phoneMobile}</p>
+                <div className="ico">
+                  <MailIcon />
                 </div>
-              </div>
-              <div className="info-row">
-                <div className="ico">✉</div>
                 <div>
                   <h5>Email</h5>
-                  <p>{siteConfig.email}</p>
+                  <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
                 </div>
               </div>
               <div className="info-row">
-                <div className="ico">◷</div>
+                <div className="ico">
+                  <ClockIcon />
+                </div>
                 <div>
                   <h5>Hours</h5>
-                  <p>Monday–Friday, 9am–5pm</p>
+                  <p>Monday-Friday, 9am-5pm</p>
                 </div>
               </div>
               <div className="info-row">
-                <div className="ico">§</div>
+                <div className="ico">
+                  <FileIcon />
+                </div>
                 <div>
                   <h5>License</h5>
                   <p>
-                    {siteConfig.license.jurisdiction} {siteConfig.license.number} ·{" "}
+                    {siteConfig.license.jurisdiction} {siteConfig.license.number},{" "}
                     {siteConfig.license.type}
                   </p>
                 </div>
