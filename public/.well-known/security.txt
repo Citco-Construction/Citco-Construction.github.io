@@ -1,0 +1,5 @@
+Contact: https://github.com/Citco-Construction/Citco-Construction.github.io/issues
+Contact: mailto:Chris@citcoconstruction.com
+Preferred-Languages: en, es
+Canonical: https://citcoconstruction.com/.well-known/security.txt
+Expires: 2027-10-25T00:00:00.000Z

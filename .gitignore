@@ -1,0 +1,17 @@
+node_modules/
+tools/eslint/node_modules/
+.next/
+out/
+next-env.d.ts
+.DS_Store
+*.tsbuildinfo
+
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+.claude/**
+.mcp.json
+CLAUDE.md
