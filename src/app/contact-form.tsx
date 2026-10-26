@@ -15,7 +15,7 @@ const copy = {
     detailsPh: "Tell us about scope, timeline, and location.",
     submit: "Submit Inquiry",
     success:
-      "Thank you — this demo form doesn't send yet, but your message would land straight with ownership.",
+      "Thanks, this demo form doesn't send yet, but your message would land straight with Chris.",
   },
   es: {
     name: "Nombre Completo",
@@ -34,7 +34,7 @@ const copy = {
     detailsPh: "Cuéntenos sobre el alcance, el cronograma y la ubicación.",
     submit: "Enviar Consulta",
     success:
-      "Gracias — este formulario de demostración todavía no envía mensajes, pero su mensaje llegaría directamente a la gerencia.",
+      "Gracias, este formulario de demostración todavía no envía mensajes, pero su mensaje llegaría directamente a Chris.",
   },
 };
 

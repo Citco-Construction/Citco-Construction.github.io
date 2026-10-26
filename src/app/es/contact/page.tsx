@@ -46,7 +46,7 @@ export default function ContactPageEs() {
                 maxWidth: 440,
               }}
             >
-              Cada proyecto comienza con una conversación directa — no con un centro de llamadas.
+              Cada proyecto comienza con una conversación directa, no con un centro de llamadas.
               Cuéntenos sobre su ampliación, renovación, cocina o baño.
             </p>
             <div style={{ marginTop: 8 }}>

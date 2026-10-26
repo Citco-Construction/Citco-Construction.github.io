@@ -34,7 +34,7 @@ export function telHref(phone: string): string {
 }
 
 /** Google Maps link for the office address, using known coordinates for precision. */
-export const addressMapsUrl = `https://www.google.com/maps/search/?api=query&query=${siteConfig.address.lat},${siteConfig.address.lng}`;
+export const addressMapsUrl = `https://www.google.com/maps/search/?api=1&query=${siteConfig.address.lat},${siteConfig.address.lng}`;
 
 export type SitePage = {
   path: string;
@@ -54,7 +54,7 @@ export const sitePages: SitePage[] = [
 export const legalPages: SitePage[] = [{ path: "/privacy", labelKey: "privacy" }];
 
 // No company-specific Instagram/LinkedIn handles were provided yet, so those two
-// link to the platform root rather than a real profile — isProfile stays false for
+// link to the platform root rather than a real profile, so isProfile stays false for
 // them so generateOrganizationSchema doesn't cite a generic homepage as "sameAs" this
 // business. GitHub links to the org's actual account, so it's a real profile link.
 export const socialLinks: {

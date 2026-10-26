@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/app/breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 import { pageBreadcrumbItems, pageBreadcrumbSchema } from "@/lib/schema";
@@ -32,6 +33,26 @@ export default function AboutPageEs() {
       </section>
 
       <section>
+        <div className="wrap profile-grid">
+          <div className="profile-photo">
+            <Image
+              src="/images/chris-vidal.jpg"
+              alt={siteConfig.officers[1].name}
+              fill
+              sizes="(max-width: 920px) 160px, 240px"
+            />
+          </div>
+          <div className="profile-copy">
+            <h3>{siteConfig.officers[1].name}</h3>
+            <p className="role">
+              {siteConfig.officers[1].title}, {siteConfig.legalName}
+            </p>
+            <p className="tenure">Desde 2004</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div className="wrap about-grid">
           <div className="about-copy">
             <p>
@@ -48,10 +69,10 @@ export default function AboutPageEs() {
             <p>
               Hoy Citco se enfoca en{" "}
               <strong>ampliaciones residenciales, renovaciones mayores, cocinas y baños</strong> en
-              todo Miami-Dade — trabajo en las casas donde la gente realmente vive.
+              todo Miami-Dade: trabajo en las casas donde la gente realmente vive.
             </p>
             <p>
-              Dirección: <strong>{siteConfig.officers[0].name}</strong> (Presidente) y{" "}
+              <strong>{siteConfig.officers[0].name}</strong> (Presidente) y{" "}
               <strong>{siteConfig.officers[1].name}</strong> (Vicepresidente, Tesorero).
             </p>
           </div>
@@ -93,7 +114,7 @@ export default function AboutPageEs() {
             </div>
             <div className="license-badge">
               <span className="dot" />
-              Activa y Vigente — DBPR de Florida
+              Activa y vigente con el DBPR de Florida
             </div>
           </div>
         </div>
@@ -103,21 +124,27 @@ export default function AboutPageEs() {
         <div className="wrap" style={{ maxWidth: 900 }}>
           <div className="gallery-grid">
             <div className="gallery-item">
-              <img
+              <Image
                 src="/images/about-kitchen.jpg"
                 alt="Remodelación de cocina y comedor por Citco Construction"
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
               />
             </div>
             <div className="gallery-item">
-              <img
+              <Image
                 src="/images/about-exterior.jpg"
                 alt="Exterior de una casa en Coral Gables construida por Citco Construction"
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
               />
             </div>
             <div className="gallery-item">
-              <img
+              <Image
                 src="/images/about-living-room.jpg"
                 alt="Remodelación de sala por Citco Construction"
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 920px) 50vw, 33vw"
               />
             </div>
           </div>
