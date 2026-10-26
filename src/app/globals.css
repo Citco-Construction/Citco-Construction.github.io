@@ -516,7 +516,7 @@ section[id] {
   margin-top: 12px;
   padding: 7px;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: 25%;
   color: var(--ink-dim);
   transition: color 0.2s, border-color 0.2s;
 }

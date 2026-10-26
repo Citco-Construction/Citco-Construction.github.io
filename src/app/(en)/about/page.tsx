@@ -40,6 +40,7 @@ export default function AboutPage() {
               src="/images/chris-vidal.jpg"
               alt={siteConfig.officers[1].name}
               fill
+              priority
               sizes="(max-width: 920px) 160px, 240px"
             />
           </div>
